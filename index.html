@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gradient-to-r from-white to-gray-500 duration-300" id="body" onload="getCurrentDateTime12HourFormat()">
+
+    <div class="w-full flex  justify-center items-center h-screen ">
+        <div class="flex group">
+            <div class="w-72 group h-[600px] bg-black rounded-[30px] shadow-2xl skew-y-12 hover:skew-y-0  duration-300 side"
+                id="phone">
+                <!-- <div class="w-full bg-red-500 h-9 -skew-x-12"></div> -->
+                <div class="h-full  justify-between flex flex-col relative rounded-[24px] p-0 m-0 ">
+                    <div class="w-full h-full ">
+                        <img src="https://th.bing.com/th/id/OIP.ggAnDTvvlEE6c8RNqew1SgHaNK?rs=1&pid=ImgDetMain"
+                            class="w-full h-full object-cover rounded-[24px]" id="sup">
+
+                        <video id="videoElement" autoplay playsinline
+                            class="w-full h-full object-cover rounded-[24px] hidden " style="-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);"></video>
+
+                    </div>
+                    <div class="w-full h-full absolute flex-col flex justify-between border-8 border-black rounded-[24px] p-0 m-0"
+                        id="main">
+                        <div class="w-full h-full" onclick="swapScreen()">
+                            <div class="w-full h-8  rounded-t-3xl flex justify-center">
+                                <div class="w-3/12 text-center items-center flex justify-center text-white text-xs">
+                                    <span>Mobitel</span>
+                                </div>
+
+                                <div class="bg-black h-full rounded-b-2xl w-6/12 flex justify-center items-center">
+
+                                    <div class="h-1 bg-slate-700 w-7 rounded-2xl"></div>
+                                    <div
+                                        class="h-3 bg-slate-700 w-3 ml-3 rounded-full flex justify-center items-center">
+                                        <div class="h-2 bg-slate-900 w-2  rounded-full "></div>
+                                    </div>
+                                </div>
+                                <div class="w-3/12 flex items-center justify-center ">
+
+                                    <svg viewBox="0 0 24 24" class="w-4 h-4 " 
+                                        xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path d="M4 20V19M8 20V16M12 20V12M16 20V8" stroke="#ffffff"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                    </svg>
+
+                                    <svg viewBox="0 0 24 24" class="w-4 h-4 " xmlns="http://www.w3.org/2000/svg" 
+                                        stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M21 10.5v3M6 17h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2Z">
+                                            </path>
+                                            <path fill="#ffffff" stroke="#ffffff" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="M15 10H7v4h8v-4Z"></path>
+                                        </g>
+                                    </svg>
+
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="w-full text-center hDiv" id="date">
+                                <p class="font-medium text-white pt-10" id="dates">Monady, 8 July</p>
+                                <p class="font-semibold text-white text-6xl" id="timer">1:10</p>
+
+                            </div>
+
+                            <div class="w-full h-20  p-2 mt-10" id="message">
+                                <div class="w-full h-full bg-black bg-opacity-50 rounded-2xl backdrop-blur-sm flex items-center justify-center">
+                                    <div class="w-2/12 h-10 rounded-full  flex justify-center items-center">
+
+                                         <img class="w-8 h-8" src="pngwing.com (1).png" alt="" srcset="">
+                                        </div>
+                                    
+                                         <div class="w-9/12 h-10  ml-2 text-white">
+                                            <div class="font-semibold">Ashan Himantha</div>
+                                            <div class="text-xs">hena ghpm</div>
+                                         </div>
+
+                                         
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="w-full text-center hidden" id="Passcode">
+                                <p class="font-medium text-white pt-10">Enter Passcode</p>
+                                <div class="w-full justify-center flex">
+                                    <div class="grid grid-cols-6 w-1/2 pt-4">
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                        <div class="h-2 w-2 border border-gray-50 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class=" h-full w-full justify-center  items-center hidden" id="lockScreen">
+
+                            <div class="grid grid-cols-3 gap-7">
+
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300  bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-3">1</p>
+                                    <p class="text-[8px] -mt-1"></p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center  hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-2">2</p>
+                                    <p class="text-[6px] -mt-1">ABC</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center  hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">3</p>
+                                    <p class="text-[6px] -mt-1">DEF</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center  hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">4</p>
+                                    <p class="text-[6px] -mt-1">GHI</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center  hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">5</p>
+                                    <p class="text-[6px] -mt-1">JKL</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">6</p>
+                                    <p class="text-[6px] -mt-1">MNO</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">7</p>
+                                    <p class="text-[6px] -mt-1">PQRS</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">8</p>
+                                    <p class="text-[6px] -mt-1">TUV</p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[8px]">9</p>
+                                    <p class="text-[6px] -mt-1">WXYZ</p>
+                                </div>
+                                <div class="bg h-12 w-12 rounded-full  justify-center   font-semibold text-center">
+                                    <p class="pt-[6px]"></p>
+                                    <p class="text-[6px] -mt-1"></p>
+                                </div>
+                                <div
+                                    class="bg h-12 w-12 rounded-full bg-white justify-center hover:bg-slate-400 hover:bg-opacity-50 duration-300 bg-opacity-50 text-white font-semibold text-center">
+                                    <p class="pt-[12px]">0</p>
+                                    <p class="text-[6px] -mt-1"></p>
+                                </div>
+                                <div class="bg h-12 w-12 rounded-full  font-semibold text-center">
+                                    <p class="pt-[8px]"></p>
+                                    <p class="text-[6px] -mt-1"></p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="w-full h-8  mb-5 pb-5 hidden" id="OptionPanelPasscode">
+                            <div class="w-1/2 text-center text-white text-xs cursor-pointer">Emergency</div>
+                            <div class="w-1/2 text-center text-white text-xs cursor-pointer"
+                                onclick="window.location.reload();">
+                                Cancel</div>
+                        </div>
+                        <div class="w-full h-8  mb-5 pb-5 hDiv " id="OptionPanel">
+                            <div class="w-full flex justify-between h-full ">
+                                <div onclick="flash()"
+                                    class="w-10 h-10 ml-5 bg-slate-400 flex justify-center items-center rounded-full bg-opacity-40">
+                                    <svg fill="#ffffff" class="w-4 h-4" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                        viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        enable-background="new 0 0 512 512" stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <g>
+                                                <path
+                                                    d="M384.719,0h-256C119.883,0,112,7.164,112,16v80c0,52.406,14.992,91.43,44.563,115.984 C168.914,222.242,176,236.289,176,250.508V496c0,8.836,7.883,16,16.719,16h128c8.836,0,15.281-7.164,15.281-16V250.508 c0-14.219,7.086-28.258,19.43-38.516C385.008,187.438,400,148.414,400,96V16C400,7.164,393.555,0,384.719,0z M144,32h224v48H144V32 z M335.344,187.375C315.656,203.734,304,226.75,304,250.508V480h-96V250.508c0-23.766-10.938-46.781-30.633-63.141 c-19.047-15.813-29.57-41.125-32.086-75.367h222.875C365.641,146.242,354.398,171.555,335.344,187.375z">
+                                                </path>
+                                                <path
+                                                    d="m256.719,304c17.648,0 32-14.352 32-32s-14.352-32-32-32c-17.649,0-32,14.352-32,32s14.351,32 32,32z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="w-[50%] h-full " onclick="swapScreen()"></div>
+                                <div onclick="hDiv()"
+                                    class="w-10 h-10 mr-5 bg-slate-400 flex justify-center items-center rounded-full bg-opacity-40">
+                                    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <g id="System / Camera">
+                                                <path id="Vector"
+                                                    d="M9.48898 7H6.2002C5.08009 7 4.51962 7 4.0918 7.21799C3.71547 7.40973 3.40973 7.71547 3.21799 8.0918C3 8.51962 3 9.08009 3 10.2002V15.8002C3 16.9203 3 17.4796 3.21799 17.9074C3.40973 18.2837 3.71547 18.5905 4.0918 18.7822C4.5192 19 5.07899 19 6.19691 19H17.8031C18.921 19 19.48 19 19.9074 18.7822C20.2837 18.5905 20.5905 18.2837 20.7822 17.9074C21 17.48 21 16.921 21 15.8031V10.1969C21 9.07899 21 8.5192 20.7822 8.0918C20.5905 7.71547 20.2837 7.40973 19.9074 7.21799C19.4796 7 18.9203 7 17.8002 7H14.5108M9.48898 7H9.55078M9.48898 7C9.50151 7.00001 9.51468 7 9.52857 7L9.55078 7M9.48898 7C9.38286 6.99995 9.32339 6.99941 9.27637 6.99414C8.68878 6.92835 8.28578 6.36908 8.40918 5.79084C8.42066 5.73703 8.44336 5.66894 8.4883 5.53412L8.49023 5.52841C8.54156 5.37443 8.56723 5.29743 8.59558 5.22949C8.88586 4.53389 9.54322 4.06083 10.2949 4.00541C10.3683 4 10.449 4 10.6113 4H13.3886C13.5509 4 13.6322 4 13.7057 4.00541C14.4574 4.06083 15.114 4.53389 15.4043 5.22949C15.4326 5.29743 15.4584 5.37434 15.5098 5.52832C15.556 5.66699 15.5791 5.73636 15.5908 5.79093C15.7142 6.36917 15.3118 6.92835 14.7242 6.99414C14.6772 6.99941 14.6171 6.99995 14.5108 7M9.55078 7H14.449M14.449 7H14.5108M14.449 7L14.4712 7C14.4851 7 14.4983 7.00001 14.5108 7M12 16C10.3431 16 9 14.6569 9 13C9 11.3431 10.3431 10 12 10C13.6569 10 15 11.3431 15 13C15 14.6569 13.6569 16 12 16Z"
+                                                    stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full h-full  flex justify-center  mt-8" onclick="swapScreen()">
+                                <div class="w-2/5 bg-slate-400 bg-opacity-60 rounded-2xl h-1"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!--  -->
+
+
+            </div>
+            <!-- 
+       <div class="w-4 bg-red-500 h-[567px] mt-[47px] rounded-r-full  group-hover:skew-y-[90deg] duration-150"></div> -->
+        </div>
+    </div>
+
+
+    <style>
+        .side {
+
+            transform: perspective(500px) scaleZ(10) rotateY(1deg);
+        }
+
+        .side:hover {
+            transform: perspective(500px) scaleZ(10) rotateY(0deg);
+        }
+
+        .hDiv {
+            animation-name: HideDiv !important;
+            animation: HideDiv 200ms;
+        }
+
+        .hDivSlow {
+            animation-name: HideDiv !important;
+            animation: HideDiv 1200ms;
+        }
+
+        .z {
+            z-index: 9999;
+        }
+
+        @keyframes HideDiv {
+            0% {
+                scale: 0.9;
+                opacity: 0;
+            }
+
+            100% {
+                scale: 1;
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
